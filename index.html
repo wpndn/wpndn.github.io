@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>CMD Matrix</title>
+  <style>
+    body {
+      background: black;
+      color: #00ff00;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      text-align: center;
+    }
+    code {
+      display: block;
+      background: #000;
+      padding: 15px;
+      border: 1px solid #00ff00;
+      margin-bottom: 10px;
+      font-size: 14px;
+      user-select: all;
+    }
+    button {
+      background: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-family: monospace;
+    }
+    button:hover {
+      background: #00ff00;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <code id="cmd">
+color 0a & mode con cols=200 & for /L %i in (0,0,1) do echo %random:~-1%%random:~-1%%random:~-1%%random:~-1%%random:~-1%%random:~-1%%random:~-1%%random:~-1%%random:~-1%%random:~-1%
+    </code>
+    <button onclick="copy()">Скопировать</button>
+  </div>
+
+  <script>
+    function copy() {
+      navigator.clipboard.writeText(
+        document.getElementById("cmd").innerText
+      );
+      alert("Скопировано!");
+    }
+  </script>
+</body>
+</html>
